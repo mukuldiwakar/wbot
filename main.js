@@ -153,7 +153,7 @@ event.on('chat-update', async(msg) =>{
                     msg.message = msg.quoted
                     const file = await event.downloadAndSaveMediaMessage(msg, msg_id)
                     mat = wa.getRandom('.webp')
-                    exof = await wa.addMetadata('BOT', "Mat")
+                    exof = await wa.addMetadata('This world shall know pain', "P∆IN🐦")
                     exec(`ffmpeg -i ${file} -ss 00:00:00 -t 00:00:15 ${mat}`, (err) => {
                         fs.unlinkSync(file)
                         if (err) return wa.sendMessage(to, 'Failed to convert image to sticker❌')
@@ -204,7 +204,7 @@ event.on('chat-update', async(msg) =>{
                 exec(`ffmpeg -i ${file} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${mat}`, (err) => {
                     fs.unlinkSync(file)
                     if (err) return wa.sendMessage(to, 'Failed to convert image to sticker❌')
-                    exec(`webpmux -set exif ${wa.addMetadata('BOT', "Mat")} ${mat} -o ${mat}`, async (error) => {
+                    exec(`webpmux -set exif ${wa.addMetadata('This world shall know pain', "P∆IN🐦")} ${mat} -o ${mat}`, async (error) => {
                         if (error) return console.log(error)
                         wa.sendSticker(to, mat)
                         fs.unlinkSync(mat)
@@ -356,7 +356,7 @@ event.on('chat-update', async(msg) =>{
                 msg.message = msg.quoted
                 gerak = msg.quoted.stickerMessage.firstFrameSidecar
                 const file = await event.downloadAndSaveMediaMessage(msg, msg_id)
-                exec(`webpmux -set exif ${wa.addMetadata('BOT', "Mat")} ${file} -o ${file}`, async (error) => {
+                exec(`webpmux -set exif ${wa.addMetadata('This world shall know pain', "P∆IN🐦")} ${file} -o ${file}`, async (error) => {
                     if (error) return console.log(error)
                     wa.sendSticker(to, file)
                     fs.unlinkSync(file)
