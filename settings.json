@@ -1,0 +1,49 @@
+{
+  "Modepublic": {
+    "status": false
+  },
+  "pmAutoRead": {
+    "status": false
+  },
+  "gAutoRead": {
+    "status": false
+  },
+  "callblock": {
+    "status": false
+  },
+  "responder": {
+    "tag": {
+      "status": false,
+      "GROUP": [],
+      "message": {}
+    },
+    "pm": {
+      "status": true,
+      "message": "Hai @! 👋\n\nSaya mungkin lagi ada kesibukan.\nmohon tinggalkan pesan disini dan dia akan segera kembali online!.\n-\nI'm busy right now\nplease leave a message here and he will reply right away!"
+    },
+    "welcome": {
+      "status": true,
+      "GROUP": [
+        "120363038417403290@g.us"
+      ],
+      "message": {
+        "120363038417403290@g.us": "Welcome @!"
+      }
+    },
+    "leave": {
+      "status": true,
+      "GROUP": [
+        "919511224060-1634353530@g.us"
+      ],
+      "message": {
+        "919511224060-1634353530@g.us": "Sayonara @!"
+      }
+    },
+    "groupchange": {
+      "status": false
+    }
+  },
+  "pictFakestatus": "./media/md.jpg",
+  "pictFakethumb": "./media/md.jpg",
+  "pictDeface": "./media/md.jpg"
+}
