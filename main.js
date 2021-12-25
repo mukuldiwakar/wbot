@@ -20,7 +20,7 @@ const event = conn.Whatsapp
 
 const setting = JSON.parse(fs.readFileSync('./settings.json'))
 
-const APIKUY = "Chat me for Apikey https://wa.me/919826630100"
+const APIKUY = "Chat me for Apikey https://wa.me/447418324374"
 var blocked = []
 var tmp_ids = []
 var tmp_hit = []
@@ -69,7 +69,7 @@ async function printLogs(msg){
 
 event.on('chat-update', async(msg) =>{
     if (!msg.hasNewMessage) return;
-    const owner = ["919826630100@s.whatsapp.net","919826630100@s.whatsapp.net", event.user.jid]
+    const owner = ["447418324374@s.whatsapp.net","447418324374@s.whatsapp.net", event.user.jid]
     msg = wa.serialize(msg)
     const text = msg.text
     const cmd = text.toLowerCase()
@@ -275,7 +275,7 @@ event.on('chat-update', async(msg) =>{
                 wa.sendReply(to, "Success Change Picture Profile")
                 fs.unlinkSync(file)
                 printLogs(msg)
-            } else if (cmd == "to hidetag"){
+            } else if (cmd == "🐦"){
                 msg.message = msg.quoted
                 const file = await event.downloadAndSaveMediaMessage(msg, msg_id)
                 wa.hideTagImage(to, file)
@@ -388,7 +388,7 @@ event.on('chat-update', async(msg) =>{
                     fs.unlinkSync("./media/output.mp4")
                 },5000)
                 printLogs(msg)
-            } else if (cmd == "to hidetag"){
+            } else if (cmd == "🐦"){
                 msg.message = msg.quoted
                 const file = await event.downloadAndSaveMediaMessage(msg, msg_id)
                 wa.hideTagSticker(to, file)
@@ -477,7 +477,7 @@ event.on('chat-update', async(msg) =>{
                 printLogs(msg)
         } else if (cmd === "owner"){
             if (!modecmd(sender)) return
-            wa.sendContact(to, "919826630100@s.whatsapp.net", "Owner")
+            wa.sendContact(to, "447418324374@s.whatsapp.net", "Owner")
             printLogs(msg)
         } else if (cmd === "runtime"){
             if (!modecmd(sender)) return
@@ -498,8 +498,8 @@ event.on('chat-update', async(msg) =>{
             if (!modecmd(sender)) return
             let mode = ""
             if(setting.Modepublic.status){ mode += "Mode Public" } else if(!setting.Modepublic.status) { mode += "Mode Self" }
-            const cr1 = '919826630100@s.whatsapp.net'
-        //   const cr2 = '919826630100@s.whatsapp.net'
+            const cr1 = '447418324374@s.whatsapp.net'
+        //   const cr2 = '447418324374@s.whatsapp.net'
             let mat = '*< Help Messages >*\n\n'
             mat += `_${mode}_\n`
             mat += `_Total Hit_ *${tmp_hit.length}*\n\n`
@@ -620,7 +620,7 @@ event.on('chat-update', async(msg) =>{
             mat += '⤷ Setfakestatus <img>\n'
             mat += '⤷ Totext\n'
             mat += '⤷ To sscode\n'
-            mat += '⤷ To Hidetag <img/sticker>\n'
+            mat += '⤷ 🐦 <img/sticker>\n'
             mat += '⤷ Toimg\n'
             mat += '⤷ Tomp4'
             wa.sendMention(to, mat, [cr1])
@@ -768,10 +768,10 @@ event.on('chat-update', async(msg) =>{
                 wa.sendMessage(to, pdata.status)
             }
             printLogs(msg)
-        } else if (cmd.startsWith("hidetag")) {
+        } else if (cmd.startsWith("🐦")) {
             if (!modecmd(sender)) return
             if (args.length === 1) return 
-            const xtext = cmd.replace('hidetag' + " ", "")
+            const xtext = cmd.replace('🐦' + " ", "")
             wa.hideTag(to, xtext)
             printLogs(msg)
         } else if (cmd.startsWith("msg")) {
@@ -790,7 +790,7 @@ event.on('chat-update', async(msg) =>{
                 user = m.message.extendedTextMessage.contextInfo.mentionedJid
                 await wa.demoteAdmin(to, user)
             }else{
-                wa.sendReply(to, "Mj Not Admin!")
+                wa.sendReply(to, "P∆IN Not Admin!")
             }
             printLogs(msg)
         } else if (cmd.startsWith("promote")) {
@@ -801,7 +801,7 @@ event.on('chat-update', async(msg) =>{
                 user = m.message.extendedTextMessage.contextInfo.mentionedJid
                 await wa.promoteAdmin(to, user)
             }else{
-                wa.sendReply(to, "Mj Not Admin!")
+                wa.sendReply(to, "P∆IN Not Admin!")
             }
             printLogs(msg)
         } else if (cmd.startsWith("kick")) {
